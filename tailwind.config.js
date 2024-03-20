@@ -3,6 +3,23 @@ module.exports = {
   content: ["./public/**/*.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      spacing: {
+        "gutter-lg": "32px", // large desktop gutter
+        "gutter-md": "24px", // medium desktop and mobile gutter
+      },
+      width: {
+        "column-lg": "80px", // large desktop column width
+        "column-md": "72px", // medium desktop column width
+        "column-tb": "88px", // tablet column width
+        "column-mb": "64px", // mobile column width
+      },
+      screens: {
+        "lg-desktop": "1312px", // Custom screen size for large desktop
+        "md-desktop": "1128px", // Custom screen size for medium desktop
+        "md-tablet": "928px", // Custom screen size for tablet
+        "sm-mobile": "328px",
+      },
+
       fontFamily: {
         sans: [
           "Noto Sans Georgian",
