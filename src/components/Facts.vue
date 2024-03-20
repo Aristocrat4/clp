@@ -1,6 +1,6 @@
 <template>
   <div
-    class="max-w-screen-sm-mobile md-tablet:max-w-screen-md-tablet md-desktop:max-w-screen-md-desktop h-fit bg-interface-white rounded-[1.25rem] pt-5 pb-2 px-3 mt-4 mx-auto"
+    class="mx-4 md-tablet:mx-auto max-w-screen-md-tablet md-tablet:max-w-screen-md-tablet md-desktop:max-w-screen-md-desktop h-fit bg-interface-white rounded-[1.25rem] pt-5 pb-2 px-3 mt-4"
   >
     <h2 class="text-h2-mobile font-semibold mb-4">ცნობილი ფაქტები</h2>
     <swiper
@@ -16,7 +16,7 @@
           slidesPerView: 2.8,
         },
       }"
-      class="mySwiper w-full flex justify-center items-center text-h2-mobile font-Medium"
+      class="mySwiper facts w-full flex justify-center items-center text-h2-mobile font-Medium"
     >
       <swiper-slide>
         <div
@@ -32,7 +32,7 @@
       </swiper-slide>
       <swiper-slide>
         <div
-          class="rounded-[1.25rem] p-5 w-[90%] flex flex-col gap-3 bg-interface-darkWhite"
+          class="rounded-[1.25rem] p-3 w-[90%] flex flex-col gap-3 bg-interface-darkWhite"
         >
           <img
             class="w-full h-full max-h-[7.5rem] rounded-[1.25rem]"
@@ -44,7 +44,7 @@
       </swiper-slide>
       <swiper-slide>
         <div
-          class="rounded-[1.25rem] p-5 w-[90%] flex flex-col gap-3 bg-interface-darkWhite"
+          class="rounded-[1.25rem] p-3 w-[90%] flex flex-col gap-3 bg-interface-darkWhite"
         >
           <img
             class="w-full h-full max-h-[7.5rem] rounded-[1.25rem]"
@@ -56,7 +56,7 @@
       </swiper-slide>
       <swiper-slide>
         <div
-          class="rounded-[1.25rem] p-5 w-[90%] flex flex-col gap-3 bg-interface-darkWhite"
+          class="rounded-[1.25rem] p-3 w-[90%] flex flex-col gap-3 bg-interface-darkWhite"
         >
           <img
             class="w-full h-full max-h-[7.5rem] rounded-[1.25rem]"
@@ -68,7 +68,7 @@
       </swiper-slide>
       <swiper-slide>
         <div
-          class="rounded-[1.25rem] p-5 w-[90%] flex flex-col gap-3 bg-interface-darkWhite"
+          class="rounded-[1.25rem] p-3 w-[90%] flex flex-col gap-3 bg-interface-darkWhite"
         >
           <img
             class="w-full h-full max-h-[7.5rem] rounded-[1.25rem]"
@@ -99,7 +99,7 @@ export default defineComponent({
 });
 </script>
 <style>
-.swiper-pagination {
+.facts > .swiper-pagination {
   display: none;
 }
 </style>

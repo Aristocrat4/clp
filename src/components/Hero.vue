@@ -1,7 +1,7 @@
 <template>
   <div class="bg-interface-white rounded-[1.25rem] py-3 mt-4">
     <section
-      class="rounded-[1.25rem] mt-4 max-w-screen-sm-mobile md-tablet:max-w-screen-md-tablet md-desktop:max-w-screen-md-desktop grid grid-cols-4 md-tablet:grid-cols-8 md-desktop:grid-cols-12 gap-4 md-desktop:gap-gutter-md w-full mx-auto items-center"
+      class="rounded-[1.25rem] mt-4 px-4 max-w-screen-md-tablet md-tablet:max-w-screen-md-tablet md-desktop:max-w-screen-md-desktop grid grid-cols-4 md-tablet:grid-cols-8 md-desktop:grid-cols-12 gap-4 md-desktop:gap-gutter-md w-full mx-auto items-center"
     >
       <div
         class="col-span-4 h-[17.5rem] md-tablet:h-[25.375rem] md-tablet:col-span-8 md-desktop:col-span-12 md-desktop:flex md-desktop:items-center md-desktop:gap-10"
@@ -111,10 +111,10 @@ export default defineComponent({
 });
 </script>
 <style>
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 928px) {
   .swiper-button-next,
   .swiper-button-prev {
-    display: none;
+    display: none !important;
   }
 
   .swiper-button-next:after,

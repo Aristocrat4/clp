@@ -4,6 +4,7 @@
     <Hero></Hero>
     <AllNews></AllNews>
     <Facts></Facts>
+    <MixedCards></MixedCards>
   </div>
 </template>
 
@@ -13,9 +14,10 @@ import Header from "@/components/Header.vue";
 import Hero from "@/components/Hero.vue";
 import AllNews from "@/components/AllNews.vue";
 import Facts from "@/components/Facts.vue";
+import MixedCards from "@/components/MixedCards.vue";
 
 export default defineComponent({
   name: "HomeView",
-  components: { Header, Hero, AllNews, Facts },
+  components: { Header, Hero, AllNews, Facts, MixedCards },
 });
 </script>

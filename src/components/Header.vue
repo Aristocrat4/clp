@@ -1,7 +1,7 @@
 <template>
   <div class="bg-interface-white">
     <header
-      class="max-w-screen-sm-mobile md-tablet:max-w-screen-md-tablet md-desktop:max-w-screen-md-desktop grid grid-cols-4 md-tablet:grid-cols-8 md-desktop:grid-cols-12 gap-gutter-md md-tablet:gap-gutter-lg md-desktop:gap-gutter-md w-full py-4 mx-auto items-center"
+      class="px-4 max-w-screen-md-tablet md-tablet:max-w-screen-md-tablet md-desktop:max-w-screen-md-desktop grid grid-cols-4 md-tablet:grid-cols-8 md-desktop:grid-cols-12 gap-gutter-md md-tablet:gap-gutter-lg md-desktop:gap-gutter-md w-full py-4 mx-auto items-center"
     >
       <div
         class="logo col-span-2 md-tablet:col-span-4 md-desktop:col-span-6 md-desktop:flex md-desktop:items-center md-desktop:gap-10"
