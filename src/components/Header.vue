@@ -8,14 +8,19 @@
       >
         <img class="w-[6.75rem] h-8" src="../assets/logo.svg" alt="logo" />
         <nav
-          class="hidden md-desktop:block relative before:content-[''] before:block before:absolute before:w-px before:h-full before:bg-interface-lightGray before:-left-5"
+          class="px-4 text-h2-mobile max-w-screen-md-tablet md-tablet:max-w-screen-md-tablet md-desktop:max-w-screen-md-desktop w-full py-4 mx-auto items-center"
         >
           <ul class="flex gap-8 text-body-medium">
-            <li>პოლიტიკა</li>
-            <li>საზოგადოება</li>
-            <li>სამართალი</li>
-            <li class="flex gap-2 uppercase">
-              სხვა <img src="../assets/arrow-down.svg" alt="arrow-down" />
+            <li v-for="(category, index) in visibleCategories" :key="index">
+              {{ category }}
+            </li>
+            <li v-if="hiddenCategories.length" class="dropdown-others z-20">
+              სხვა
+              <ul class="dropdown-menu hidden">
+                <li v-for="(category, index) in hiddenCategories" :key="index">
+                  {{ category }}
+                </li>
+              </ul>
             </li>
           </ul>
         </nav>
@@ -49,12 +54,46 @@
           <img src="../assets/search.svg" alt="search" />
         </div>
         <div
+          @click="toggleSidebar"
           class="burger bg-primary-white w-12 h-12 rounded-[50%] flex justify-center items-center md-desktop:hidden"
         >
           <img src="../assets/burger.png" alt="burger" />
         </div>
       </div>
     </header>
+  </div>
+  <div
+    :style="{
+      left: showSideBar ? '0' : '100%',
+    }"
+    class="sidebar w-full bg-interface-white absolute z-50 transition-all duration-300 h-[100%]"
+  >
+    <nav
+      class="px-4 text-h2-mobile max-w-screen-md-tablet md-tablet:max-w-screen-md-tablet md-desktop:max-w-screen-md-desktop w-full py-4 mx-auto items-center"
+    >
+      <ul class="flex flex-col gap-8 text-body-medium">
+        <li>პოლიტიკა</li>
+        <li>საზოგადოება</li>
+        <li>სამართალი</li>
+        <li>რელიგია</li>
+        <li>ბიზნესი</li>
+        <li>ეკონომიკა</li>
+      </ul>
+    </nav>
+    <div
+      class="socials md-tablet:hidden flex gap-2 justify-center items-center mt-6"
+    >
+      <div
+        class="instagram bg-primary-white w-12 h-12 rounded-[50%] justify-center items-center flex"
+      >
+        <img src="../assets/instagram.svg" alt="instagram" />
+      </div>
+      <div
+        class="fb bg-primary-white w-12 h-12 rounded-[50%] justify-center items-center flex"
+      >
+        <img src="../assets/fb.svg" alt="fb" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -64,5 +103,51 @@ import { defineComponent } from "vue";
 export default defineComponent({
   name: "Header",
   components: {},
+  data() {
+    return {
+      showSideBar: false,
+      allCategories:
+        ([
+          "პოლიტიკა",
+          "საზოგადოება",
+          "ეკონომიკა",
+          "რელიგია",
+          "ბიზნესი",
+          "ეკონომიკა",
+        ] as string[]) || [],
+      visibleCategories: ([] as string[]) || [],
+      hiddenCategories: ([] as string[]) || [],
+      maxVisible: 3,
+    };
+  },
+  mounted() {
+    this.calculateCategories();
+    window.addEventListener("resize", this.calculateCategories);
+  },
+  beforeDestroy() {
+    window.removeEventListener("resize", this.calculateCategories);
+  },
+  methods: {
+    calculateCategories() {
+      this.visibleCategories = this.allCategories.slice(0, this.maxVisible);
+      this.hiddenCategories = this.allCategories.slice(this.maxVisible);
+    },
+    toggleSidebar() {
+      this.showSideBar = !this.showSideBar;
+      if (this.showSideBar) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "";
+      }
+    },
+  },
 });
 </script>
+<style>
+li {
+  cursor: pointer;
+}
+.dropdown-others:hover .dropdown-menu {
+  display: block !important;
+}
+</style>
