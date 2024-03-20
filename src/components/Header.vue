@@ -8,7 +8,7 @@
       >
         <img class="w-[6.75rem] h-8" src="../assets/logo.svg" alt="logo" />
         <nav
-          class="px-4 text-h2-mobile max-w-screen-md-tablet md-tablet:max-w-screen-md-tablet md-desktop:max-w-screen-md-desktop w-full py-4 mx-auto items-center"
+          class="hidden md-desktop:block px-4 text-h2-mobile max-w-screen-md-tablet md-tablet:max-w-screen-md-tablet md-desktop:max-w-screen-md-desktop w-full py-4 mx-auto items-center"
         >
           <ul class="flex gap-8 text-body-medium">
             <li v-for="(category, index) in visibleCategories" :key="index">
